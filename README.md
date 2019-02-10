@@ -32,6 +32,12 @@ configuration files. A project structure has already been setup for your ready
 to go. Before starting the server, make sure to build the javascript bundle
 using `npm build` or `npm run watch`.
 
+Create a superuser using django's `createsuperuser` command and follow the 
+prompts. Basic login/logout views are provided by `django-admin`. Once you have
+logged, redirect to `/#/profile` to test that the vue router is correctly
+managing authenticated users. You will be redirected to `/#/forbidden/` if
+you are not logged in. 
+
 Run the usual `makemigrations`, `migrate` and `collectstatic` before
 running the server.
 
