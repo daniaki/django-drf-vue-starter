@@ -30,7 +30,7 @@ schema_view = get_schema_view(
       default_version=settings.CURRENT_API_VERSION,
       description=(
           "Open access API for application developers to "
-          "query {}.\n".format(settings.PROJECT_NAME) +
+          "query '{}'.\n".format(settings.PROJECT_NAME) +
           "Current version: {}".format(settings.CURRENT_API_VERSION)
       ),
       terms_of_service="https://www.google.com/policies/terms/",
@@ -41,22 +41,25 @@ schema_view = get_schema_view(
 )
 
 api_urlpatterns = [
-   path(
+    path('api/', include('api.urls'), name='api'),
+    path(
        'api/swagger/',
        schema_view.with_ui('swagger', cache_timeout=0),
        name='schema-swagger-ui'
-   ),
-   path(
+    ),
+    path(
        'api/redoc/',
        schema_view.with_ui('redoc', cache_timeout=0),
        name='schema-redoc'
-   ),
+    ),
 ]
+
 
 urlpatterns = [
     path('', include('index.urls'), name='index'),
-    path('api/', include('api.urls'), name='api'),
 ]
+urlpatterns += api_urlpatterns
+
 
 if settings.ADMIN_ENABLED:
     urlpatterns += [path('admin/', admin.site.urls), ]
