@@ -102,3 +102,19 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Project
+secrets.json
+.idea/
+~/logs/*.log
+static/
+media/
+!/*/static/
+
+
+# Node.js
+frontend/node_modules/
+frontend/bundles/
+frontend/src/theme/*
+frontend/webpack-stats.json
+frontend/package-lock.json

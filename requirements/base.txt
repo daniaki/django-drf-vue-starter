@@ -1,0 +1,9 @@
+django
+djangorestframework
+django-filter>=2.0.0
+djangorestframework-filters
+django-webpack-loader
+drf-yasg
+factory-boy
+mock
+coverage
