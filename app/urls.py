@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
 
-from rest_framework import permissions
+from rest_framework import permissions,authentication
 
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -37,11 +37,12 @@ schema_view = get_schema_view(
       contact=openapi.Contact(email=settings.CONTACT_EMAIL),
    ),
    public=True,
+   authentication_classes=(authentication.SessionAuthentication, ),
    permission_classes=(permissions.AllowAny,),
 )
 
 api_urlpatterns = [
-    path('api/', include('api.urls'), name='api'),
+    path('api/', include(('api.urls', 'api'), namespace='api')),
     path(
        'api/swagger/',
        schema_view.with_ui('swagger', cache_timeout=0),
@@ -56,7 +57,7 @@ api_urlpatterns = [
 
 
 urlpatterns = [
-    path('', include('index.urls'), name='index'),
+    path('', include(('index.urls', 'index'), namespace='index')),
 ]
 urlpatterns += api_urlpatterns
 
