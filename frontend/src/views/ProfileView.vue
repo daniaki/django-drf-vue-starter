@@ -6,7 +6,7 @@
       <h1>Hi {{ username }}</h1>
     </div>
     <div style="width: 100%; text-align: center;">
-      <p> This is your profile dashboard. </p>
+      <p> This is your profile dashboard. <a href="/logout/?next=/">Logout.</a></p>
     </div>
   </div>
 </template>
