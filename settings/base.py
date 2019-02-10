@@ -48,14 +48,15 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
+    'core',
     'index',
     'api',
 
     'rest_framework',
-    # 'rest_framework_jwt'
     'rest_framework_filters',
     'drf_yasg',
     'webpack_loader',
+    # 'rest_framework_jwt'
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -88,6 +89,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.username',
+                'core.context_processors.user_is_authenticated',
             ],
         },
     },
@@ -166,6 +169,13 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, 'media'))
+
+
+# Redirect to home URL after login (Default redirects to /profile/)
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'index:auth-login'
+LOGOUT_URL = 'index:auth-logout'
 
 
 # Webpack configuration
