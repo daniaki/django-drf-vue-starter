@@ -6,7 +6,9 @@
 <script>
   export default {
     name: "Header",
-    data() {}
+    data() {
+      return {};
+    }
   }
 </script>
 

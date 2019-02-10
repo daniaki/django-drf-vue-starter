@@ -18,7 +18,10 @@
   
   export default {
     name: "Forbidden",
-    mixins: [DynamicHeightMixin, ]
+    mixins: [DynamicHeightMixin, ],
+    data () {
+      return {};
+    }
   }
 </script>
 

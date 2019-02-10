@@ -19,9 +19,12 @@
   export default {
     name: "ProfileDashboardView",
     mixins: [DynamicHeightMixin, ],
+    data () {
+      return {};
+    },
     computed: {
       username() {
-        return getDjangoData().username
+        return getDjangoData().username;
       }
     }
   }

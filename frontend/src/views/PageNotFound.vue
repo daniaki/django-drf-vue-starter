@@ -16,7 +16,10 @@
   
   export default {
     name: "PageNotFound",
-    mixins: [DynamicHeightMixin, ]
+    mixins: [DynamicHeightMixin, ],
+    data () {
+      return {};
+    }
   }
 </script>
 
