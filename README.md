@@ -27,7 +27,7 @@ If you wish you may change the `app` folder name and `PROJECT_NAME` and the
 setting in `settings/base.py`, however make sure to also change references to 
 this name in `app/wsgi.py` and `manage.py`.
 
-Finally, the folder `frontend` contains the frontend source code and development
+The folder `frontend` contains the frontend source code and development
 configuration files. A project structure has already been setup for your ready 
 to go. Before starting the server, make sure to build the javascript bundle
 using `npm build` or `npm run watch`.
