@@ -27,11 +27,6 @@ If you wish you may change the `app` folder name and `PROJECT_NAME` and the
 setting in `settings/base.py`, however make sure to also change references to 
 this name in `app/wsgi.py` and `manage.py`.
 
-The folder `frontend` contains the frontend source code and development
-configuration files. A project structure has already been setup for your ready 
-to go. Before starting the server, make sure to build the javascript bundle
-using `npm build` or `npm run watch`.
-
 Create a superuser using django's `createsuperuser` command and follow the 
 prompts. Basic login/logout views are provided by `django-admin`. Once you have
 logged, redirect to `/#/profile` to test that the vue router is correctly
@@ -41,6 +36,10 @@ you are not logged in.
 Run the usual `makemigrations`, `migrate` and `collectstatic` before
 running the server.
 
+The folder `frontend` contains the frontend source code and development
+configuration files. A project structure has already been setup for your ready 
+to go. Before starting the server, make sure to build the javascript bundle
+using `npm build` or `npm run watch`.
 
 # Notes
 - The `core` app should contain common utilities, mixins, views etc used
