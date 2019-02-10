@@ -7,7 +7,7 @@ import _ from "lodash";
  *
  * @param {object} args - The things to print
  */
-export function print(args) {
+export function print(...args) {
   console.log(...args);
 }
 
